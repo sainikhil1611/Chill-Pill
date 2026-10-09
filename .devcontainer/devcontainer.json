@@ -1,0 +1,7 @@
+{
+  "name": "Chill-Pill",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+  "postCreateCommand": "npm ci",
+  "forwardPorts": [3000],
+  "customizations": { "vscode": { "extensions": ["dbaeumer.vscode-eslint"] } }
+}

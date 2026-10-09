@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FocusCue Activity</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow">FocusCue</p>
+          <h1>Activity monitor</h1>
+        </div>
+      </header>
+
+      <section class="status-row" aria-label="Tracking status">
+        <div>
+          <p class="label">Background tracking</p>
+          <p class="muted" id="status-copy">Loading activity…</p>
+        </div>
+        <label class="switch">
+          <input id="tracking-toggle" type="checkbox" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span class="sr-only">Toggle background tracking</span>
+        </label>
+      </section>
+
+      <section class="score-panel">
+        <div>
+          <p class="label">Focus score</p>
+          <p class="score"><span id="focus-score">0</span><small>%</small></p>
+        </div>
+        <div class="current">
+          <p class="label">Current domain</p>
+          <p id="current-domain">Waiting for activity</p>
+        </div>
+      </section>
+
+      <section class="totals" aria-label="Today's totals">
+        <div>
+          <span class="dot productive"></span>
+          <p class="label">Productive</p>
+          <strong id="productive-time">0m</strong>
+        </div>
+        <div>
+          <span class="dot distracting"></span>
+          <p class="label">Distracting</p>
+          <strong id="distracting-time">0m</strong>
+        </div>
+        <div>
+          <span class="dot neutral"></span>
+          <p class="label">Neutral</p>
+          <strong id="neutral-time">0m</strong>
+        </div>
+      </section>
+
+      <section class="domains-section">
+        <div class="section-heading">
+          <h2>Top domains today</h2>
+          <button id="reset-button" type="button">Reset today</button>
+        </div>
+        <div class="domain-scroll">
+          <ol id="domain-list" class="domain-list"></ol>
+          <p id="empty-state" class="empty-state">No activity recorded yet.</p>
+        </div>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

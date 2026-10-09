@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "FocusCue Activity Monitor",
+  "version": "0.1.0",
+  "minimum_chrome_version": "116",
+  "description": "Tracks active browser time by domain so FocusCue can react when attention drifts.",
+  "permissions": ["alarms", "idle", "storage", "tabs"],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "FocusCue Activity Monitor",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*"
+      ],
+      "js": ["bridge/web-bridge.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
